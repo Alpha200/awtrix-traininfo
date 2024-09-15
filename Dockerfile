@@ -2,7 +2,7 @@
 FROM rust:alpine as builder
 
 # Install necessary dependencies
-RUN apk add --no-cache musl-dev openssl-dev
+RUN apk add --no-cache musl-dev openssl-dev pkgconfig
 
 # Create a new directory for the application
 WORKDIR /app
