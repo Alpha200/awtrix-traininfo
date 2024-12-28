@@ -77,7 +77,7 @@ fn determine_color(station_result: TrainInfoResponse) -> Vec<i32> {
 }
 
 async fn get_station_info(host: &str, from: &str, direction: &str, duration: &str)  -> Result<TrainInfoResponse, Box<dyn Error>> {
-    let url = format!("http://{0}/stops/{1}/departures?direction={2}&duration={3}", host, from, direction, duration);
+    let url = format!("http://{0}/stops/{1}/departures?direction={2}&duration={3}&bus=false", host, from, direction, duration);
 
     let client = reqwest::Client::new();
     let response = client.get(url)
